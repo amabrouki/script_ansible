@@ -11,7 +11,7 @@ case $STATE in
         "FAULT")  /usr/sbin/service dnsmasq start
                   exit 0
                   ;;
-        *)        /sbin/logger "dnsmasq unknown state"
+        *)        echo "dnsmasq unknown state"
                   exit 1
                   ;;
 esac
