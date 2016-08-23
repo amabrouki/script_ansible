@@ -16,6 +16,7 @@ vrrp_instance VI_1 {
     priority {{ keepalived_backup_priority }}
     {% endif %}   
     advert_int 1
+    notify /etc/keepalived/notify.sh
     authentication {
         auth_type PASS
         auth_pass {{ keepalived_auth_pass }}
