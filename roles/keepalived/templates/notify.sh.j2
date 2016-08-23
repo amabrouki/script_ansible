@@ -6,7 +6,7 @@ STATE=$3
 case $STATE in
         "MASTER") /usr/sbin/service dnsmasq start
                   ;;
-        "SLAVE") /usr/sbin/service dnsmasq stop
+        "BACKUP") /usr/sbin/service dnsmasq stop
                   ;;
         "FAULT")  /usr/sbin/service dnsmasq stop
                   exit 0
