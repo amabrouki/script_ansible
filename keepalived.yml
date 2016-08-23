@@ -1,7 +1,7 @@
 - hosts: 192.168.0.1
   roles:
-     - { role: keepalived, keepalived_shared_ip: "192.168.0.5", keepalived_role: "master" }
+     - { role: keepalived, keepalived_shared_ip: "192.168.0.5", keepalived_role: "MASTER" }
 
 - hosts: 192.168.0.2
   roles:
-     - { role: keepalived, keepalived_shared_ip: "192.168.0.5", keepalived_role: "slave" }
+     - { role: keepalived, keepalived_shared_ip: "192.168.0.5", keepalived_role: "MASTER" }
