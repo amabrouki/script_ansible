@@ -7,10 +7,10 @@
   notify: restart keepalived
 
 - name: Configuration de keepalived
-  template: src={{item}} dest=/etc/keepalived/{{item}}
+  template: src={{item}}.j2 dest=/etc/keepalived/{{item}}
   with_items:
-  - "keepalived.conf.j2"
-  - "notify.sh.j2"
+  - "keepalived.conf"
+  - "notify.sh"
   tags: keepalived
   notify: restart keepalived
 
