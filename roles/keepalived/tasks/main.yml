@@ -7,8 +7,9 @@
   notify: restart keepalived
 
 - name: Configuration de keepalived
-  template: src=keepalived.conf.j2 dest=/etc/keepalived/keepalived.conf
-  template: src=notify.sh.j2 dest=/etc/keepalived/notify.sh
+  template: 
+      - src=keepalived.conf.j2 dest=/etc/keepalived/keepalived.conf
+      - src=notify.sh.j2 dest=/etc/keepalived/notify.sh
   tags: keepalived
   notify: restart keepalived
 
