@@ -7,7 +7,7 @@
   notify: restart keepalived
 
 - name: Configuration de keepalived
-  template: src={{item.url}}.j2 dest=/etc/keepalived/{{item.url}} mode={{item.b}}
+  template: src=${item.url}.j2 dest=/etc/keepalived/${item.url} mode=${item.b}
   with_items:
   - { url: 'keepalived.conf', b: '644' }
   - { Url: 'notify.sh', b: '544' }
