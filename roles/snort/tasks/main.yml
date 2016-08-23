@@ -1,0 +1,5 @@
+  - git: repo=https://github.com/amabrouki/snort.git  dest=/etc/reposnort1 force=yes
+  - name: build the image
+    command: docker build -t snort /etc/reposnort/snort
+  - name: build the squid3
+    command: docker run  --privileged -it -p 3000:3000 -d snort

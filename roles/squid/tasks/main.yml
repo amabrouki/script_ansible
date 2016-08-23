@@ -1,0 +1,11 @@
+# create a directory if it doesn't exist
+  - file: path=/etc/repo state=directory mode=0755
+  - git: repo=https://github.com/amabrouki/Squid3-ssl.git  dest=/etc/repo force=yes
+  - name: build the image
+    command: docker build -t squid /etc/repo/Dfile
+  - name: build the deb
+    command: docker run -v /etc/repo/deb:/src/debs squid /bin/sh -c 'cp /src/*.deb /src/debs/'
+  - name: build the squid3
+    command: docker build -t squid3 /etc/repo
+  - name: build the squid3
+    command: docker run -it -d -p 3128:3128 -p 8088:80 squid3
