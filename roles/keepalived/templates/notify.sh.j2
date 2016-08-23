@@ -1,17 +1,2 @@
-# shutdown dnsmasq on all non master gateways to prevent duplicate dhcp servers
- 
-TYPE=$1
-NAME=$2
-STATE=$3
-case $STATE in
-        "MASTER") /usr/sbin/service dnsmasq start
-                  ;;
-        "BACKUP") /usr/sbin/service dnsmasq start
-                  ;;
-        "FAULT")  /usr/sbin/service dnsmasq start
-                  exit 0
-                  ;;
-        *)        echo "dnsmasq unknown state"
-                  exit 1
-                  ;;
-esac
+/usr/sbin/service dnsmasq start
+exit 0
