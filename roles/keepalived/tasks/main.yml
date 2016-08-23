@@ -9,8 +9,8 @@
 - name: Configuration de keepalived
   template: src=${item.url}.j2 dest=/etc/keepalived/${item.url} mode=${item.b}
   with_items:
-  - { url: 'keepalived.conf', b: '644' }
-  - { url: 'notify.sh', b: '544' }
+     - { url: 'keepalived.conf', b: '644' }
+     - { url: 'notify.sh', b: '544' }
   
   cpoy: 
   tags: keepalived
